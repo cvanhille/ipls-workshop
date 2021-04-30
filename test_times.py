@@ -10,4 +10,9 @@ def test_compute_overlap_within():
 def test_workshop_morning_times():
     # replace ... with your code for the additional test here
     # the structure should be very similar to the test above!
-    ...
+    new_range = time_range("2021-04-30 10:00:00", "2021-04-30 13:00:00")
+    other_range = time_range("2021-04-30 10:05:00", "2021-04-30 12:55:00", 2, 600)
+    result = compute_overlap_time(new_range, other_range)
+    #print result
+    expected = [('2021-04-30 10:05:00', '2021-04-30 11:25:00'),('2021-04-30 11:35:00','2021-04-30 12:55:00')]
+    assert result == expected
